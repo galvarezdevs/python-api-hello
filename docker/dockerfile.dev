@@ -1,0 +1,15 @@
+FROM python:alpine3.7
+
+WORKDIR /app
+
+COPY src/ .
+
+RUN pip install --upgrade pip
+
+RUN pip install -r requirements.txt
+
+EXPOSE 4040
+
+ENTRYPOINT [ "python" ]
+
+CMD [ "server.py" ]
